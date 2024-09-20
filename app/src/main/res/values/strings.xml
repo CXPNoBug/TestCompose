@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestCompose</string>
+    <string name="title_activity_modifier">ModifierActivity</string>
+    <string name="title_activity_state">StateActivity</string>
+</resources>

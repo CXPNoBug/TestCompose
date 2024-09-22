@@ -28,6 +28,10 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -195,10 +199,13 @@ class MainActivity : ComponentActivity() {
                 )
             }
             //输入框控件
+            var userInput by remember { mutableStateOf("") }
             TextField(
                 modifier = Modifier.align(Alignment.CenterStart),
-                value = "",
-                onValueChange = {},
+                value = userInput,
+                onValueChange = { str ->
+                    userInput = str
+                },
                 placeholder = {
                     Text(text = "请输入内容")  //hint
                 },

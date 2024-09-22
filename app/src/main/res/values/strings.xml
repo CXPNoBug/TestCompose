@@ -2,4 +2,7 @@
     <string name="app_name">TestCompose</string>
     <string name="title_activity_modifier">ModifierActivity</string>
     <string name="title_activity_state">StateActivity</string>
+    <string name="title_activity_lazy_layout">LazyLayoutActivity</string>
+    <string name="title_activity_component">ComponentActivity</string>
+    <string name="title_activity_text">TextActivity</string>
 </resources>

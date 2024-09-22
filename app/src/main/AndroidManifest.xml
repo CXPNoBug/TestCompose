@@ -72,6 +72,21 @@
             android:exported="false"
             android:label="@string/title_activity_text"
             android:theme="@style/Theme.TestCompose" />
+        <activity
+            android:name=".test.ProgressActivity"
+            android:exported="false"
+            android:label="@string/title_activity_text"
+            android:theme="@style/Theme.TestCompose" />
+        <activity
+            android:name=".test.LayoutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_text"
+            android:theme="@style/Theme.TestCompose" />
+        <activity
+            android:name=".test.ModifierAttributeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_text"
+            android:theme="@style/Theme.TestCompose" />
         <!--基础组件 End-->
 
         <activity

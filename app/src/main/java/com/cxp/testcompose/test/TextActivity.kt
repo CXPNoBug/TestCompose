@@ -13,8 +13,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.selection.SelectionContainer
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -55,7 +57,9 @@ class TextActivity : BaseActivity() {
     override fun InitView() {
         val context = LocalContext.current
         Column(
-            modifier = Modifier.padding(start = 10.dp, end = 10.dp)
+            modifier = Modifier
+                .padding(start = 10.dp, end = 10.dp)
+                .verticalScroll(rememberScrollState())
         ) {
             //显示文本
             SimpleText()
@@ -263,8 +267,8 @@ class TextActivity : BaseActivity() {
     /**
      * 超链接
      */
-    val annotatedText= buildAnnotatedString {
-        withStyle(style = ParagraphStyle(lineHeight = 25.sp)){
+    val annotatedText = buildAnnotatedString {
+        withStyle(style = ParagraphStyle(lineHeight = 25.sp)) {
             pushStringAnnotation(
                 tag = "URL",
                 annotation = "https://www.baidu.com"
@@ -275,7 +279,7 @@ class TextActivity : BaseActivity() {
                     textDecoration = TextDecoration.Underline,
                     color = Color.Red
                 )
-            ){
+            ) {
                 append("点我")
             }
             pop()
@@ -286,12 +290,13 @@ class TextActivity : BaseActivity() {
      * 超链接
      */
     @Composable
-    fun AnnotatedStringWithLinkSample(){
+    fun AnnotatedStringWithLinkSample() {
         ClickableText(
             text = annotatedText,
-            onClick = { offset->
-                annotatedText.getStringAnnotations("URL", start = offset, end = offset).firstOrNull()?.let {
-                    val url =it.item
+            onClick = { offset ->
+                annotatedText.getStringAnnotations("URL", start = offset, end = offset)
+                    .firstOrNull()?.let {
+                    val url = it.item
                     Log.i(TAG, "test-->: $offset  $url")
                 }
             }

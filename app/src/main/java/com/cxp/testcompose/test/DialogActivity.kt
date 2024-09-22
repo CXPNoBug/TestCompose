@@ -61,13 +61,13 @@ class DialogActivity : BaseActivity() {
 
         Column {
             //AlertDialog
-//            DialogExamples()
+            DialogExamples()
 
             //弹窗
 //            MinimalDialog() {}
 
             //显示自定义弹窗
-            DialogWithImageExample()
+//            DialogWithImageExample()
         }
     }
 
@@ -77,7 +77,7 @@ class DialogActivity : BaseActivity() {
     @Composable
     fun DialogExamples() {
         val context = LocalContext.current
-        var openAlertDialog by remember { mutableStateOf(false) }
+        var openAlertDialog by remember { mutableStateOf(true) }
 
         when {
             openAlertDialog -> {
@@ -106,9 +106,11 @@ class DialogActivity : BaseActivity() {
         dialogText: String,
         icon: ImageVector,
     ) {
-        AlertDialog(icon = {
-            Icon(icon, contentDescription = "Example Icon")
-        }, title = {
+        AlertDialog(
+//            icon = {
+//            Icon(icon, contentDescription = "Example Icon")
+//        },
+            title = {
             Text(text = dialogTitle)
         }, text = {
             Text(text = dialogText)

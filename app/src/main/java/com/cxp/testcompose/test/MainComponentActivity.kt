@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,6 +30,9 @@ class ComponentActivity : BaseActivity() {
                 "BadgedBox" -> start<BadgedBoxActivity>()
                 "Slider" -> start<SliderActivity>()
                 "Dialog" -> start<DialogActivity>()
+                "Progress" -> start<ProgressActivity>()
+                "Modifier" -> start<ModifierAttributeActivity>()
+                "Layout" -> start<LayoutActivity>()
                 else -> {}
             }
         }
@@ -37,7 +42,8 @@ class ComponentActivity : BaseActivity() {
     fun ComponentList(onClick: (String) -> Unit) {
         Column(
             modifier = Modifier
-                .fillMaxSize(),
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(
@@ -102,6 +108,27 @@ class ComponentActivity : BaseActivity() {
                     .padding(start = 10.dp, end = 10.dp),
                 onClick = { onClick("Dialog") }) {
                 Text(text = "Dialog 组件")
+            }
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp),
+                onClick = { onClick("Progress") }) {
+                Text(text = "Progress 组件")
+            }
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp),
+                onClick = { onClick("Modifier") }) {
+                Text(text = "Modifier 修饰符")
+            }
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp),
+                onClick = { onClick("Layout") }) {
+                Text(text = "Layout 布局")
             }
         }
     }

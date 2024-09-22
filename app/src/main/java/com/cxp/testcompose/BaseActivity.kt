@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
@@ -12,6 +14,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.cxp.testcompose.ui.theme.TestComposeTheme
 
@@ -38,11 +41,14 @@ abstract class BaseActivity : ComponentActivity() {
         setContent {
             TestComposeTheme {
                 Surface(
-                    Modifier
-                        .padding(10.dp)
+                    modifier = Modifier
+                        .border(2.dp,Color.Red)
+                        .background(Color.White)
                         .fillMaxSize()
-                        .navigationBarsPadding()
-                ) {
+                        .padding(10.dp)
+                        .navigationBarsPadding(),
+
+                    ) {
                     InitView()
                 }
             }

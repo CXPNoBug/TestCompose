@@ -87,6 +87,11 @@
             android:exported="false"
             android:label="@string/title_activity_text"
             android:theme="@style/Theme.TestCompose" />
+        <activity
+            android:name=".test.ListActivity"
+            android:exported="false"
+            android:label="@string/title_activity_text"
+            android:theme="@style/Theme.TestCompose" />
         <!--基础组件 End-->
 
         <activity

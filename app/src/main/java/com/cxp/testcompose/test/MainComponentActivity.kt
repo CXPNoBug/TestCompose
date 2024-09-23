@@ -33,6 +33,7 @@ class ComponentActivity : BaseActivity() {
                 "Progress" -> start<ProgressActivity>()
                 "Modifier" -> start<ModifierAttributeActivity>()
                 "Layout" -> start<LayoutActivity>()
+                "List" -> start<ListActivity>()
                 else -> {}
             }
         }
@@ -129,6 +130,13 @@ class ComponentActivity : BaseActivity() {
                     .padding(start = 10.dp, end = 10.dp),
                 onClick = { onClick("Layout") }) {
                 Text(text = "Layout 布局")
+            }
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp),
+                onClick = { onClick("List") }) {
+                Text(text = "列表 布局")
             }
         }
     }
